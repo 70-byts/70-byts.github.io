@@ -1,0 +1,67 @@
+body {
+    background-color: #fce4ec;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.rose {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #d81b60;
+    border-radius: 50%;
+    animation: spin 10s infinite linear;
+}
+
+/* Pétalos de la rosa */
+.rose::before, .rose::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #d81b60;
+    border-radius: 50%;
+}
+
+.rose::before {
+    top: -50px;
+    left: 0;
+    transform: rotate(-45deg);
+}
+
+.rose::after {
+    top: -50px;
+    right: 0;
+    transform: rotate(45deg);
+}
+
+/* Tallo */
+.rose::after {
+    background-color: #388e3c;
+    width: 10px;
+    height: 150px;
+    border-radius: 5px;
+    top: 60px;
+    left: 45px;
+    transform: rotate(0);
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Mensaje */
+#message {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #d81b60;
+    opacity: 0;
+}
